@@ -33,6 +33,11 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: "1.23.0"
+
+      - name: Static check
+        uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
         
       - name: Check Styles
         run: test -z $(go fmt ./...)
